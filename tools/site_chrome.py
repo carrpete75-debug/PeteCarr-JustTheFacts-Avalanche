@@ -7,7 +7,8 @@ archive snapshots.
 CSS_VERSION = "avs-1"  # bump only when docs/styles.css changes (then on every page)
 
 NAV = [("home", "Home", "index.html"), ("schedule", "Schedule", "schedule.html"),
-       ("roster", "Roster", "roster.html"), ("archive", "Archive", "archive/index.html")]
+       ("roster", "Roster", "roster.html"), ("archive", "Archive", "archive/index.html"),
+       ("hof", "Hall of Fame", "hall-of-fame.html")]
 
 
 def stylesheet(prefix=""):

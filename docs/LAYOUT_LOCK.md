@@ -20,7 +20,7 @@ Built from the approved Nuggets Desk layout, which was itself cloned from the Br
    No weather card.
 5. **Honesty rule**: never make up a figure. If a number isn't available, say so on the card with `<span class="unavail">…</span>` (e.g. "Lines not posted yet"). Every card ends with a `.source-row`. Odds and markets carry an "as of" time in MT.
 6. External links use `target="_blank" rel="noopener noreferrer"`. Same-site links stay relative. No JavaScript.
-7. **Archive**: freeze the previous home page to `docs/archive/YYYY-MM-DD.html`. Rewrite paths to `../styles.css?v=…` and `../index.html` etc., and remove `aria-current` from the snapshot's nav. Add a `<li>` at the top of the list in `docs/archive/index.html`, below the `<!-- ARCHIVE:list -->` marker, and delete the "No archived editions yet" placeholder the first time. Never overwrite an existing archive file.
+7. **Archive**: freeze the previous home page to `docs/archive/YYYY-MM-DD.html`. Rewrite paths to `../styles.css?v=…` and `../index.html`, `../hall-of-fame.html` etc., and remove `aria-current` from the snapshot's nav. Add a `<li>` at the top of the list in `docs/archive/index.html`, below the `<!-- ARCHIVE:list -->` marker, and delete the "No archived editions yet" placeholder the first time. Never overwrite an existing archive file.
 8. **Ticket links**: every upcoming game row (home Upcoming card and schedule page) ends with `<a class="ticket-link" href="…" target="_blank" rel="noopener noreferrer" aria-label="Tickets: …">Tickets</a>`. The URL comes only from the game's `ticketsLink` in the NHL schedule API:
    - Home games: the Avs' `avs.social/...` short link, resolved to its Ticketmaster `/event/<id>`.
    - Road games: the host team's Ticketmaster link.
@@ -29,8 +29,8 @@ Built from the approved Nuggets Desk layout, which was itself cloned from the Br
    - Never guess event IDs; never use resale or affiliate links.
    - Ticketmaster answers bots with 401/403, so a link counts as verified when it came verbatim from the NHL schedule data for that exact game.
 9. **Custom domain**: `docs/CNAME` (`avs.petecarr.com`) must stay in the repo.
-10. **Site nav**: every page's `nav.nav` has exactly four links, in this order: **Home, Schedule, Roster, Archive**.
-    - Paths are relative: `index.html` / `schedule.html` / `roster.html` / `archive/index.html` from the docs root; `../index.html` / `../schedule.html` / `../roster.html` / `index.html` from `docs/archive/`.
+10. **Site nav**: every page's `nav.nav` has exactly five links, in this order: **Home, Schedule, Roster, Archive, Hall of Fame**.
+    - Paths are relative: `index.html` / `schedule.html` / `roster.html` / `archive/index.html` / `hall-of-fame.html` from the docs root; `../index.html` / `../schedule.html` / `../roster.html` / `index.html` / `../hall-of-fame.html` from `docs/archive/`.
     - The current page carries `aria-current="page"`.
     - The shared header, nav and footer markup lives in `tools/site_chrome.py`. The generators and the archive page use it, and the home page must match it.
     - The stylesheet link is `styles.css?v=avs-1` (`../styles.css?v=avs-1` in archive/). Bump `CSS_VERSION` in site_chrome.py, and the version on every page, only when styles.css changes.
@@ -45,3 +45,7 @@ Built from the approved Nuggets Desk layout, which was itself cloned from the Br
     - Groups: Forwards → Defense → Goalies, sorted by number.
     - Cards after the table: Coaching staff → Injury report → Sources & notes.
     - Writes `/workspace/avalanche-data/roster-YYYY-MM-DD.json`.
+12. **Hall of Fame page** (`docs/hall-of-fame.html`): STATIC. It is generated once, outside the repo, by `/workspace/avalanche-hof-draft/build.py` (copy its output into docs).
+    - Daily runs never edit, regenerate, re-date or reorder it, and never add or remove inductees. The only allowed change is keeping its shared nav and header in sync when `site_chrome.py` changes, and that is done by re-running the generator.
+    - Content changes (new inductees, an active player retiring, stat refreshes) happen only on an explicit user request. Verify every fact against NHL.com, Hockey-Reference or the Avalanche site, and give every entry a source line.
+    - Structure: hero (kicker "Franchise history"), then section cards "Retired numbers", "Strong cases", "Active: nominated now, inducted on retirement" and "Villain wing". Each holds `article.hof-entry` items, and each card ends with a `.source-row`. Stats are Colorado era (1995–96 on); Quebec Nordiques years are listed separately.

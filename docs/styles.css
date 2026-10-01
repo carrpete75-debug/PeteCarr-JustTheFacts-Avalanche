@@ -135,6 +135,15 @@ a:focus-visible {
   }
 }
 
+/* Official Avalanche Desk logo — centered directly below .avalanche-banner inside the header (added 2026-10-01) */
+.avalanche-desk-logo {
+  display: block;
+  width: clamp(96px, 9vw, 120px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0.5rem auto 0.4rem;
+}
+
 .footer-inner {
   width: min(100% - 2rem, 72rem);
   margin: 0 auto;

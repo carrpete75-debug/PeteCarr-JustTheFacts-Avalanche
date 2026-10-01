@@ -4,7 +4,7 @@ Usage: header(active="schedule", prefix="") where prefix is "" from docs/ root
 or "../" from docs/archive/. `active` gets aria-current="page"; pass None for
 archive snapshots.
 """
-CSS_VERSION = "avs-1"  # bump only when docs/styles.css changes (then on every page)
+CSS_VERSION = "desk-logo-1"  # bump only when docs/styles.css changes (then on every page)
 
 NAV = [("home", "Home", "index.html"), ("schedule", "Schedule", "schedule.html"),
        ("roster", "Roster", "roster.html"), ("archive", "Archive", "archive/index.html"),
@@ -40,6 +40,7 @@ def header(active=None, prefix=""):
         </div>
       </div>
     </div>
+    <img class="avalanche-desk-logo" src="{prefix}avalanche-desk-logo.png" alt="Avalanche Desk logo" width="112" height="112">
     <div class="header-bar">
       <div class="header-inner header-inner--main">
         <div class="brand-block">

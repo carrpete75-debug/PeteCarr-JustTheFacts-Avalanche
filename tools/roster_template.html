@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Current Colorado Avalanche roster: {{TOTAL}} active players with numbers, positions, shoots/catches, height, weight, age, birthplace, season stats and injuries.">
+  <title>Roster | Just the Facts — Avalanche</title>
+  {{CSS}}
+</head>
+<body>
+{{HEADER}}
+  <div class="page-shell">
+  <main class="main sched-main ros-main">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="kicker">2026–27 season</p>
+      <h1 id="page-title">Avalanche roster</h1>
+      <p class="deck">{{DECK}}</p>
+      <p class="pub-meta">As of <strong>{{ASOF}}</strong> · Season column: skaters GP · G–A–P; goalies GP · W–L–OT · SV% (regular season)</p>
+    </section>
+    <section class="card" aria-labelledby="roster-heading">
+      <div class="card-head"><h2 id="roster-heading">Players</h2><span class="sched-count">{{TOTAL}} active</span></div>
+      <div class="table-wrap"><table class="facts ros-table"><thead><tr><th scope="col">#</th><th scope="col">Player</th><th scope="col">Pos</th><th scope="col">Shoots</th><th scope="col">Ht</th><th scope="col">Wt</th><th scope="col">Age</th><th scope="col">Birthplace</th><th scope="col">2026–27</th></tr></thead><tbody>
+{{ROWS}}
+      </tbody></table></div>
+      {{NOTES}}
+    </section>
+    <section class="card" aria-labelledby="staff-heading">
+      <h2 id="staff-heading">Coaching staff</h2>
+      <dl class="data-list">{{STAFF}}</dl>
+      <p class="source-row">Source: <a href="https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams/col/roster" target="_blank" rel="noopener noreferrer">ESPN roster API</a> · <a href="https://www.nhl.com/avalanche/team/coaches" target="_blank" rel="noopener noreferrer">nhl.com/avalanche</a></p>
+    </section>
+    <section class="card" aria-labelledby="inj-heading">
+      <h2 id="inj-heading">Injury report</h2>
+      {{INJURIES}}
+      <p class="source-row">Source: <a href="https://sports.core.api.espn.com/v2/sports/hockey/leagues/nhl/teams/17/injuries" target="_blank" rel="noopener noreferrer">ESPN injuries API</a> · <a href="https://www.espn.com/nhl/team/injuries/_/name/col" target="_blank" rel="noopener noreferrer">ESPN COL injuries</a></p>
+    </section>
+    <section class="card" aria-labelledby="ros-sources-heading">
+      <h2 id="ros-sources-heading">Sources &amp; notes</h2>
+      <p class="note">The active roster, numbers, positions, shoots/catches, height, weight, birth dates and birthplaces come from the NHL’s official roster data; each name links to the player’s NHL.com page. Season stats are the NHL’s regular-season club stats. The list is cross-checked against ESPN’s roster, which also carries players on injured reserve and non-roster IR; those appear in their own group with ESPN’s status and the date ESPN last updated it. Contract figures are not shown.</p>
+      <p class="source-row">Sources: <a href="https://api-web.nhle.com/v1/roster/COL/current" target="_blank" rel="noopener noreferrer">NHL roster API</a> · <a href="https://api-web.nhle.com/v1/club-stats/COL/now" target="_blank" rel="noopener noreferrer">NHL club stats API</a> · <a href="https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams/col/roster" target="_blank" rel="noopener noreferrer">ESPN roster API</a> · <a href="https://www.nhl.com/avalanche/roster" target="_blank" rel="noopener noreferrer">nhl.com/avalanche/roster</a></p>
+    </section>
+  </main>
+  </div>
+{{FOOTER}}
+</body>
+</html>

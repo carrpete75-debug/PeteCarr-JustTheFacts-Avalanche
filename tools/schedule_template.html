@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Full {{SEASON}} Colorado Avalanche schedule: {{PRE_N}} preseason and {{REG_N}} regular-season games, with Mountain Time puck drops, US TV, results and official ticket links.">
+  <title>Schedule {{SEASON}} | Just the Facts — Avalanche</title>
+  {{CSS}}
+</head>
+<body>
+{{HEADER}}
+  <div class="page-shell">
+  <main class="main sched-main">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="kicker">{{SEASON}} season</p>
+      <h1 id="page-title">Avalanche schedule &amp; results</h1>
+      <p class="deck">{{PRE_N}} preseason games and {{REG_N}} regular-season games ({{HOME_N}} home, {{AWAY_N}} road). All times are Mountain Time. Record: <strong>{{REG_REC}}</strong> regular season (W–L–OT), <strong>{{PRE_REC}}</strong> preseason.</p>
+      <p class="pub-meta">As of <strong>{{ASOF}}</strong> · <span class="sched-legend"><span class="sched-legend__swatch" aria-hidden="true"></span>Shaded rows are home games</span></p>
+    </section>
+{{SECTIONS}}    <section class="card" aria-labelledby="sched-sources-heading">
+      <h2 id="sched-sources-heading">Sources &amp; notes</h2>
+      <p class="note">Dates, opponents, venues, US TV and results all come from the NHL’s official schedule data for the Avalanche. ALT is Altitude Sports, the Avs’ local broadcast. “TBD” means no US TV is listed yet. After each game, the time is replaced by the result (W, L, or OTL/SOL for an overtime or shootout loss; Avs score first) and the running W–L–OT record. Preseason and regular-season records are counted separately.</p>
+      <p class="note">Tickets appear for upcoming games only, and every link goes to an official seller. {{TIX_EVENT}} link to the specific game, taken from the host team’s link in the NHL schedule data (Avalanche home games via the Avs’ own avs.social link to Ticketmaster). {{TIX_GENERAL}} go to the host team’s official tickets page because no game link is published. No resale or affiliate links.</p>
+      <p class="source-row">Sources: <a href="https://api-web.nhle.com/v1/club-schedule-season/COL/now" target="_blank" rel="noopener noreferrer">NHL schedule API (COL)</a> · <a href="https://www.nhl.com/avalanche/schedule" target="_blank" rel="noopener noreferrer">nhl.com/avalanche/schedule</a></p>
+    </section>
+  </main>
+  </div>
+{{FOOTER}}
+</body>
+</html>
